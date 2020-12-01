@@ -1,8 +1,7 @@
 import { input } from './input'
 
-const twoSumAndMultiply = (arr) => {
+const twoSumAndMultiply = (arr, target = 2020) => {
   const hash = {}
-  const target = 2020
   for (let i = 0; i < arr.length; i++) {
     const diff = target - arr[i]
     if (diff in hash) {
@@ -10,12 +9,10 @@ const twoSumAndMultiply = (arr) => {
     } else {
       hash[arr[i]] = i
     }
-
   }
 }
 
-const threeSumAndMultiply = (arr) => {
-  const target = 2020
+const threeSumAndMultiply = (arr, target = 2020) => {
   // fuck it brute force
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
