@@ -1,0 +1,20 @@
+{
+  "name": "adventofcode2020",
+  "version": "1.0.0",
+  "description": "advent of code 2020",
+  "author": "lauren raddatz",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec babel-node src/dec08/index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
