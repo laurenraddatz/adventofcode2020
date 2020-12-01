@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec babel-node src/dec08/index.js"
+    "start": "nodemon --exec babel-node src/dec01/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
