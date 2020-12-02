@@ -24,9 +24,8 @@ const countValidPasswords2 = (policies) => {
     const [rule, letterColon, password] = policy.split(' ')
     const letter = letterColon[0]
     const [firstIndex, secondIndex] = rule.split('-').map((n) => n - 1)
-    if (password[firstIndex] === letter && password[secondIndex] !== letter) {
-      count++
-    } else if (password[secondIndex] === letter && password[firstIndex] !== letter) {
+    if (password[firstIndex] === letter && password[secondIndex] !== letter ||
+        password[secondIndex] === letter && password[firstIndex] !== letter) {
       count++
     }
   })
