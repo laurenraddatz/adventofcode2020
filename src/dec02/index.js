@@ -8,7 +8,7 @@ const countValidPasswords1 = (policies) => {
   policies.map((policy) => {
     const [rule, letterColon, password] = policy.split(' ')
     const [min, max] = rule.split('-')
-    const letter = letterColon.substring(0, 1)
+    const letter = letterColon[0]
     const re = new RegExp(letter, 'g')
     const letterCount = password.includes(letter) ? password.match(re).length : -1
     if (letterCount >= min && letterCount <= max) {
@@ -22,16 +22,12 @@ const countValidPasswords2 = (policies) => {
   let count = 0
   policies.map((policy) => {
     const [rule, letterColon, password] = policy.split(' ')
-    const letter = letterColon.substring(0, 1)
+    const letter = letterColon[0]
     const [firstIndex, secondIndex] = rule.split('-').map((n) => n - 1)
-    if (password[firstIndex] === letter) {
-      if (password[secondIndex] !== letter) {
-        count++
-      }
-    } else if (password[secondIndex] === letter) {
-      if (password[firstIndex] !== letter) {
-        count++
-      }
+    if (password[firstIndex] === letter && password[secondIndex] !== letter) {
+      count++
+    } else if (password[secondIndex] === letter && password[firstIndex] !== letter) {
+      count++
     }
   })
   return count
