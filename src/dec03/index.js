@@ -4,12 +4,8 @@ const input = readFileSync('src/dec03/input.txt').toString()
 const data = input.split('\n')
 
 const countHowManyTreesYouHit = (treeMap) => {
-  const extendedTreeMap = []
-  treeMap.map((line) => {
-    // choose a randomly large number
-    const longerLine = line.repeat(100)
-    extendedTreeMap.push(longerLine)
-  })
+  // increase by an arbitrarily large number
+  const extendedTreeMap = treeMap.map((line) => line.repeat(100))
 
   let index1 = 0
   let treeCount1 = 0
