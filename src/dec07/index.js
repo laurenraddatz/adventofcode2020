@@ -12,12 +12,12 @@ const rules = data.reduce((rules, line) => {
 
   const bagRelation = contents !== 'no other bags'
     ? contents.split(', ').map((content) => content.replace(/ bags?/, '').substring(2))
-    : [];
+    : []
 
-  bagRelation.map((bag) => rules[color].add(bag));
+  bagRelation.map((bag) => rules[color].add(bag))
 
-  return rules;
-}, {});
+  return rules
+}, {})
 
 const recurseBags = (bag) => {
   const colors = [...rules[bag].values()];
@@ -43,10 +43,10 @@ const rulesWithCount = data.reduce((rules, line) => {
 
   rules.set(color, [])
 
-  bagRelation.map((bagColor) => rules.get(color).push(bagColor));
+  bagRelation.map((bagColor) => rules.get(color).push(bagColor))
 
   return rules;
-}, new Map());
+}, new Map())
 
 const countNestedBags = (bag) => {
   let bagCount = 0
