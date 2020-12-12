@@ -27,14 +27,14 @@ const partOne = (data) => {
         x -= value
         break
       case 'L':
-        degree -= value;
+        degree -= value
         if (degree < 0) {
-          degree = 360 + degree;
+          degree = 360 + degree
         }
         break
       case 'R':
-        degree += value;
-        degree = Math.abs(degree) % 360;
+        degree += value
+        degree = Math.abs(degree) % 360
         break
       case 'F':
         if (degree === 0) {
@@ -78,18 +78,18 @@ const partTwo = (data) => {
         break
       case 'L':
         while (value > 0) {
-          const tmp = wy;
-          wy = wx;
-          wx = -tmp;
-          value -= 90;
+          const tmp = wy
+          wy = wx
+          wx = -tmp
+          value -= 90
         }
         break
       case 'R':
         while (value > 0) {
-          const tmp = wy;
-          wy = -wx;
-          wx = tmp;
-          value -= 90;
+          const tmp = wy
+          wy = -wx
+          wx = tmp
+          value -= 90
         }
         break
       case 'F':
