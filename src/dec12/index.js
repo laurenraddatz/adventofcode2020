@@ -3,7 +3,7 @@ import { readFileSync } from 'fs'
 const input = readFileSync('src/dec12/input').toString()
 const data = input.split('\n')
 
-const runProgram = (data) => {
+const partOne = (data) => {
   let x = 0
   let y = 0
 
@@ -52,7 +52,7 @@ const runProgram = (data) => {
   return Math.abs(x) + Math.abs(y)
 }
 
-const runProgram2 = (data) => {
+const partTwo = (data) => {
   let x = 0
   let y = 0
 
@@ -102,5 +102,5 @@ const runProgram2 = (data) => {
   return Math.abs(x) + Math.abs(y)
 }
 
-console.log('part one:', runProgram(data))
-console.log('part two:', runProgram2(data))
+console.log('part one:', partOne(data))
+console.log('part two:', partTwo(data))
