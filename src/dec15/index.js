@@ -18,15 +18,15 @@ const partOne = () => {
 
 // optimized lol
 const partTwo = () => {
-  const memory = {}
+  const memory = new Map()
 
   const addToMemory = (number, index) => {
-    const value = memory[number] ?? []
+    const value = memory.get(number) ?? []
 
     value.length >= 2 ? value.shift() : null
     value.push(index + 1)
     
-    memory[number] = value
+    memory.set(number, value)
   }
 
   input.map((value, i) => addToMemory(value, i))
@@ -34,8 +34,7 @@ const partTwo = () => {
   let lastNumberSpoken = input.slice(-1)[0]
 
   for (let i = input.length; i < 30000000; i++) {
-    // console.log('i', i)
-    const value = memory[lastNumberSpoken]
+    const value = memory.get(lastNumberSpoken)
     lastNumberSpoken = value.length === 1
       ? 0
       : value.reduce((a, b) => b - a, 0)
